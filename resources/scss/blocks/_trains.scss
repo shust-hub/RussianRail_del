@@ -1,0 +1,353 @@
+#trains{
+  background: #f0f0f0;
+}
+
+.trains {
+  @media only screen and (max-width: 980px), (orientation: portrait) {
+    .content {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__description {
+    padding: 0 0 30px;
+    background-color: white;
+  }
+
+  &__content {
+    background: $lighter-gray-color;
+
+    padding: 30px 0 0;
+
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      padding: 30px 0 0;
+    }
+
+    .sidebar {
+      max-width: 26%;
+          width: 100%;
+
+      @media only screen and (max-width: 1200px), (orientation: portrait) {
+        max-width: 30%;
+      }
+
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        max-width: 100%;
+      }
+
+      ul {
+        @include white-border();
+
+        padding: 30px 25px 40px;
+
+        @media only screen and (max-width: 980px), (orientation: portrait) {
+          @include flexbox(flex-start, flex-start, flex-start);
+
+          padding: 25px 25px 20px;
+
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          margin-bottom: 15px;
+
+          @media only screen and (max-width: 980px), (orientation: portrait) {
+            width: 100%;
+          }
+
+        }
+
+        li {
+          position: relative;
+
+          font-size: 14px;
+
+          padding-bottom: 12px;
+
+          @media only screen and (max-width: 980px), (orientation: portrait) {
+            padding-right: 26px;
+
+            &::after {
+              position: absolute;
+              content: '\22EF';
+
+              top: 0;
+              right: 7px;
+            }
+
+            &:last-child {
+              &::after {
+                content: '';
+              }
+            }
+          }
+
+          &.active {
+            padding-left: 16px;
+
+            a {
+              color: $black-color;
+              font-weight: 700;
+
+              pointer-events: none;
+              cursor: default;
+            }
+
+            &::before {
+              @extend %position-absolute;
+
+              top: 2px;
+
+              width: 10px;
+              height: 13px;
+
+              background-image: url("../img/art_arrow.svg");
+            }
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .main-info {
+      max-width: 73%;
+          width: 100%;
+
+      @media only screen and (max-width: 1200px), (orientation: portrait) {
+        max-width: 68%;
+      }
+
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        max-width: 100%;
+      }
+
+      .train {
+        @include white-border();
+
+        margin-bottom: 20px;
+
+        &__description {
+          padding: 30px 25px 40px;
+
+          .text {
+            @extend %border-box;
+
+            padding-right: 25px;
+          }
+
+          @media only screen and (max-width: 980px), (orientation: portrait) {
+            padding-bottom: 20px;
+          }
+
+          img {
+            @media only screen and (max-width: 680px), (orientation: portrait) {
+              max-width: 150px;
+            }
+          }
+        }
+
+        &__schedule {
+          .stroke {
+            background: lighten($lighter-gray-color, 2%);
+            border-bottom: 1px solid $dark-white-color;
+
+            &:first-child {
+              border-top: 1px solid $dark-white-color;
+            }
+
+            .bold {
+              margin-top: 10px;
+              margin-bottom: 0;
+            }
+
+            .name {
+              font-size: 12px;
+              line-height: 14px;
+
+              margin-top: 0;
+              margin-bottom: 10px;
+            }
+
+            .number {
+              @extend %border-box;
+
+              flex-grow: 0;
+
+              padding: 0 25px;
+
+              border-right: 1px dashed $dark-white-color;
+            }
+
+            .time {
+              @extend %border-box;
+
+              max-width: 180px;
+              width: 100%;
+
+              border-right: 1px dashed $dark-white-color;
+
+              padding: 0 25px;
+
+              @media only screen and (max-width: 680px), (orientation: portrait) {
+                max-width: 145px;
+              }
+            }
+
+            .from {
+              @extend %border-box;
+
+              flex-grow: 1;
+
+              position: relative;
+              min-width: 180px;
+
+              padding: 0 25px;
+
+              &::after {
+                @extend %position-absolute;
+
+                right: -50%;
+
+                width: 10px;
+                height: 13px;
+
+                background-image: url("../img/art_arrow.svg");
+
+                margin: auto;
+
+                @media only screen and (max-width: 1200px), (orientation: portrait) {
+                  right: -70%;
+                }
+
+                @media only screen and (max-width: 1200px), (orientation: portrait) {
+                  right: -85%;
+                }
+              }
+            }
+
+            .to {
+              @extend %border-box;
+
+              flex-grow: 1;
+
+              min-width: 180px;
+
+              padding: 0 25px;
+            }
+          }
+
+          margin-bottom: 25px;
+        }
+      }
+
+      .customer-reviews {
+        @include white-border();
+
+        margin-top: 10px;
+        padding: 30px 25px;
+
+        span {
+          font-size: 20px;
+          position: relative;
+
+          color: transparent;
+
+          &::after {
+            @extend %position-absolute;
+
+            content: '\2605\2605\2605\2605\2605\2605\2605\2605\2605';
+            color: $yellow-color;
+            top: 6px;
+
+            overflow: hidden;
+          }
+
+          &.half-star {
+            &::after {
+              width: 9px;
+
+              overflow: hidden;
+            }
+          }
+
+          &.last-star {
+            margin-left: -17px;
+
+            &::after {
+              content: '\2606';
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+
+    #testimonials {
+      padding: 0;
+
+      .testimonials {
+        &__block {
+          @media only screen and (max-width: 1320px), (orientation: portrait) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #news {
+    padding: 0;
+
+    &.hidden {
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        display: flex;
+      }
+    }
+
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      @include flexbox(space-between, stretch, space-between);
+
+      display: none;
+      padding-bottom: 50px;
+    }
+
+    .news__block {
+      margin-top: 20px;
+
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        width: 49%;
+        height: 195px;
+
+        overflow: hidden;
+      }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+
+        &:first-child {
+          margin-top: 20px;
+        }
+      }
+
+      img {
+        @media only screen and (max-width: 980px), (orientation: portrait) {
+          width: 100%;
+        }
+      }
+
+      .description {
+        min-height: 130px;
+
+        @media only screen and (max-width: 980px), (orientation: portrait) {
+          padding: 18px 25px;
+          min-height: 94px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,676 @@
+header {
+  @include shadow(0 1px 2px rgba($black-color, .2));
+
+  @extend %font-smoothing;
+  @extend %backface-visibility;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 75px;
+  width: 100vw;
+  background: $white-color;
+
+  z-index: 3;
+
+  @media only screen and (max-width: 1024px), (orientation: portrait) {
+    .flex_end {
+      justify-content: flex-start;
+    }
+  }
+
+  &.nav-is-visible {
+    z-index: 99;
+
+    .content {
+      .nav-trigger {
+        span {
+          background: rgba($white-color, 0);
+
+          &::before {
+            @include transform(translateY(0) rotate(-45deg));
+          }
+
+          &::after {
+            @include transform(translateY(0) rotate(45deg));
+          }
+        }
+      }
+    }
+  }
+
+  &::before {
+    display: none;
+    content: 'desktop';
+
+    @media only screen and (max-width: 1024px), (orientation: portrait) {
+      content: 'mobile';
+    }
+  }
+
+  .content {
+    .logo {
+      z-index: 9;
+
+      img {
+        @include transition();
+        width: 100px;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+
+    nav {
+      width: 60%;
+
+      @media only screen and (max-width: 1180px), (orientation: portrait) {
+        width: 70%;
+      }
+    }
+
+    .nav-trigger {
+      @extend %position-absolute;
+
+      display: block;
+
+      left: auto;
+      right: 50px;
+
+      width: 50px;
+      height: 100%;
+
+      overflow: hidden;
+      white-space: nowrap;
+      color: transparent;
+
+      span {
+        @extend %position-absolute;
+        @include transition(background-color, .3s);
+
+        left: auto;
+        top: 50%;
+
+        width: 20px;
+        height: 2px;
+        background: $black-color;
+
+        margin-left: -10px;
+
+        &::before,
+        &::after {
+          @include transition(transform, .3s);
+          @include transform(translateZ(0));
+
+          @extend %backface-visibility;
+          @extend %position-absolute;
+
+          width: 100%;
+          height: 100%;
+
+          background: $black-color;
+        }
+
+        &::before {
+          @include transform(translateY(-6px));
+        }
+
+        &::after {
+          @include transform(translateY(6px));
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        display: none;
+      }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        right: 30px;
+      }
+
+      @media only screen and (max-width: 520px), (orientation: portrait) {
+        right: 15px;
+      }
+    }
+  }
+
+  .navigation {
+    &.moves-out {
+      @media only screen and (max-width: 1024px), (orientation: portrait) {
+        overflow-y: auto;
+      }
+
+      li {
+        &.active {
+          .subnav-trigger {
+            &::before,
+            &::after {
+              @media only screen and (min-width: 1024px) {
+                width: 14px;
+                right: 0;
+              }
+            }
+
+            &::before {
+              @include transform(rotate(225deg));
+            }
+
+            &::after {
+              @include transform(rotate(135deg));
+            }
+          }
+
+          ul.subnav {
+            bottom: auto;
+
+            @media only screen and (min-width: 1024px) {
+              @include transform(translateY(0));
+
+              border-top: 1px solid $lighter-gray-color;
+
+              margin-top: 75px;
+
+              opacity: 1;
+            }
+
+            li {
+              padding: 3px 30px 3px 0;
+
+              &:last-child {
+                padding-right: 0;
+              }
+
+              a {
+                padding-top: 0;
+              }
+
+              ul {
+                display: block;
+
+                padding-bottom: 0;
+
+                @media only screen and (max-width: 1024px), (orientation: portrait) {
+                  padding-bottom: 15px;
+                }
+              }
+
+              @media only screen and (min-width: 1024px) {
+                opacity: 1;
+              }
+
+              &.flexbox {
+                ul {
+                  @media only screen and (max-width: 860px), (orientation: portrait) {
+                    width: 100%;
+                  }
+                }
+
+                &.content {
+                  @media only screen and (max-width: 1024px), (orientation: portrait) {
+                    width: 100%;
+                    padding-right: 10px;
+                    padding-top: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        a {
+          opacity: 0;
+
+          @media only screen and (min-width: 1024px) {
+            opacity: 1;
+
+            padding-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  position: relative;
+  content: 'mobile';
+
+  min-height: 100vh;
+
+  padding-top: 55px;
+  z-index: 2;
+
+  @media only screen and (min-width: 1024px) {
+    content: 'desktop';
+  }
+
+  &.nav-is-visible {
+    @media only screen and (min-width: 1024px) {
+    }
+  }
+}
+
+.no-js {
+  header {
+    position: relative;
+    height: auto;
+
+    .navigation {
+      position: static;
+
+      width: 100%;
+      height: auto;
+
+      visibility: visible;
+      overflow: visible;
+
+      @media only screen and (min-width: 1024px) {
+        height: 75px;
+      }
+
+      &__list {
+        display: inline-block;
+      }
+
+      li {
+        &:last-child {
+          display: block;
+        }
+
+        ul {
+          &.subnav {
+            position: static;
+            width: 100%;
+
+            @media only screen and (min-width: 1024px) {
+              top: 75px;
+            }
+          }
+
+          li {
+            opacity: 1;
+
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-trigger,
+  .subnav-trigger{
+    display: none;
+  }
+
+  .go-back {
+    display: none;
+  }
+
+  main {
+    padding-top: 0;
+  }
+}
+
+.navigation {
+  @extend %border-box;
+
+  align-content: flex-start;
+
+  position: fixed;
+
+  top: 75px;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+
+  -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+
+  z-index: 9;
+  overflow-x: hidden;
+
+  &.nav-is-visible {
+    @media only screen and (max-width: 1024px), (orientation: portrait) {
+      visibility: visible;
+      background: $lighter-gray-color;
+
+      .content {
+        padding-top: 20px;
+      }
+
+      &.moves-out {
+        li {
+          a {
+            @include transform(translateX(-100%));
+
+            opacity: 0;
+          }
+
+          .subnav {
+            li {
+              a {
+                @include transform(translateX(0));
+
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      li.active {
+        ul.subnav {
+          @include transform(translateX(0));
+
+          background: $lighter-gray-color;
+
+          opacity: 1;
+
+          li {
+            ul {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    @extend %border-box;
+
+    height: 100%;
+
+    cursor: pointer;
+
+    @media only screen and (max-width: 1024px), (orientation: portrait) {
+      height: auto;
+      padding: 0;
+    }
+
+    &:hover {
+      a.subnav-trigger {
+        color: $accent-color;
+      }
+    }
+
+    &.active {
+      a.subnav-trigger {
+        color: $accent-color;
+      }
+    }
+
+    a {
+      @extend %border-box;
+
+      @media only screen and (min-width: 1024px) {
+
+        display: inline-block;
+
+        font-size: 14px;
+        line-height: 1;
+
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        height: 100%;
+
+        padding-top: 28px;
+
+        &:not(.subnav-trigger) {
+          &:hover {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 1024px), (orientation: portrait) {
+      width: 100vw;
+      padding-bottom: 8px;
+    }
+  }
+
+  li {
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &.flexbox {
+      ul {
+        li {
+          ul {
+            @media only screen and (max-width: 1024px), (orientation: portrait) {
+              margin-bottom: 15px;
+            }
+
+            li {
+              @media only screen and (max-width: 1024px), (orientation: portrait) {
+                padding-bottom: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ul.subnav {
+      @include shadow(0 1px 2px rgba($black-color, .2));
+      @include transition(transform .3s .2s, opacity .3s .2s);
+
+      @extend %position-absolute;
+
+      width: 100%;
+      background: $white-color;
+
+      padding: 28px 0;
+
+      opacity: 0;
+
+      @media only screen and (max-width: 1024px), (orientation: portrait) {
+        @include transform(translateX(100%));
+      }
+
+      @media only screen and (min-width: 1024px) {
+        @include transform(translateY(-1500px));
+      }
+
+      li {
+        @media only screen and (min-width: 1024px) {
+          opacity: 0;
+        }
+
+        ul {
+          display: none;
+
+          text-align: left;
+        }
+
+        @media only screen and (max-width: 680px), (orientation: portrait) {
+          padding: 28px 30px;
+        }
+
+        @media only screen and (max-width: 520px), (orientation: portrait) {
+          padding: 28px 15px;
+        }
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: auto;
+
+    color: $black-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &.hidden {
+      color: transparent;
+
+      &:hover {
+        color: transparent;
+      }
+    }
+  }
+
+  div {
+    &.flexbox {
+      width: 60%;
+
+      @media only screen and (max-width: 1180px), (orientation: portrait) {
+        width: 70%;
+      }
+
+      @media only screen and (max-width: 1024px), (orientation: portrait) {
+        width: 100%;
+      }
+
+      li {
+        @media only screen and (max-width: 1024px), (orientation: portrait) {
+          margin-bottom: 8px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .first-li {
+    @media only screen and (max-width: 1024px), (orientation: portrait) {
+      padding-bottom: 8px;
+    }
+  }
+
+  .subnav-trigger {
+    position: relative;
+
+    @media only screen and (min-width: 1024px) {
+      z-index: 1;
+
+      padding: {
+        left: 1.1em;
+        right: 1.8em;
+      }
+    }
+
+    &::before,
+    &::after {
+      @include nav-arrow();
+      @include transform-origin(9px 50%);
+
+      top: 9px;
+      left: auto;
+
+      background: $black-color;
+
+      @media only screen and (min-width: 1024px) {
+        @include transform-origin(50% 50%);
+        @include transition(transform 0.3s, width 0.3s, right 0.3s);
+
+        top: 34px;
+        right: 0;
+        bottom: auto;
+      }
+    }
+
+    &::before {
+      @include transform(rotate(45deg));
+
+      @media only screen and (min-width: 1024px) {
+        right: 7px;
+      }
+    }
+
+    &::after {
+      @include transform(rotate(-45deg));
+
+      @media only screen and (max-width: 1024px), (orientation: portrait) {
+        top: 10px;
+      }
+    }
+  }
+
+  .go-back {
+    border-bottom: 1px solid rgba($black-color, .1);
+
+    height: auto;
+
+    padding-bottom: 20px;
+
+    &.content {
+      padding-top: 0;
+    }
+
+    a {
+      position: relative;
+
+      &::before,
+      &::after {
+        @include nav-arrow();
+        @include transform-origin(1px 50%);
+      }
+
+      &::before {
+        @include transform(rotate(45deg));
+
+        top: 11px;
+      }
+
+      &::after {
+        @include transform(rotate(-45deg));
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .placeholder {
+    display: none;
+
+    @media only screen and (min-width: 1024px) {
+      display: block;
+      visibility: hidden;
+
+      opacity: 0;
+      pointer-events: none;
+
+      a {
+
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    position: static;
+
+    width: 100%;
+    height: 75px;
+
+    visibility: visible;
+  }
+
+  @media only screen and (max-width: 1024px), (orientation: portrait) {
+    padding: 28px 50px;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width: 680px), (orientation: portrait) {
+    padding: 28px 30px;
+  }
+
+  @media only screen and (max-width: 520px), (orientation: portrait) {
+    padding: 28px 15px;
+  }
+}

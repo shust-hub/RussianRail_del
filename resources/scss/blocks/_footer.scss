@@ -1,0 +1,229 @@
+footer {
+  color: lighten($light-violet-color, 15%);
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    @include transition();
+    opacity: 1;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  a {
+    color: lighten($light-violet-color, 30%);
+
+    &:hover {
+      color: lighten($light-violet-color, 45%);
+    }
+  }
+
+  .top {
+    background: $darken-violet-color;
+    padding: 35px 0;
+
+    .no-wrap {
+      @media only screen and (max-width: 1180px), (orientation: portrait) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .contacts {
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        margin-bottom: 10px;
+      }
+
+      p {
+        position: relative;
+
+        margin-bottom: 4px;
+        padding-left: 30px;
+
+        &::before {
+          position: absolute;
+          content: '';
+
+          top: 0;
+          left: 0;
+          bottom: 0;
+
+          width: 20px;
+
+          margin: auto;
+        }
+
+        &.russia {
+          &::before {
+            background: url("../img/footer_ico/ru_flag.svg") no-repeat center;
+          }
+        }
+
+        &.usa {
+          &::before {
+            background: url("../img/footer_ico/us_flag.svg") no-repeat center;
+          }
+        }
+
+        &.uk {
+          margin-left: 12px;
+
+          &::before {
+            background: url("../img/footer_ico/uk_flag.svg") no-repeat center;
+          }
+        }
+
+        &.au {
+          &::before {
+            background: url("../img/footer_ico/au_flag.svg") no-repeat center;
+          }
+        }
+
+        &.mail {
+          &::before {
+            background: url("../img/footer_ico/email.svg") no-repeat center;
+          }
+        }
+      }
+    }
+
+    .kids {
+      max-width: 410px;
+
+      @media only screen and (max-width: 1180px), (orientation: portrait) {
+        margin-bottom: 40px;
+      }
+
+      @media only screen and (max-width: 800px), (orientation: portrait) {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        padding-left: 0;
+        margin-top: 10px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      button {
+        position: relative;
+
+        max-width: 190px;
+        height: 40px;
+
+        font-size: 16px;
+        text-transform: inherit;
+
+        padding-left: 38px;
+        margin-top: 15px;
+
+        &::before {
+          @include transition();
+
+          position: absolute;
+          content: '';
+
+          top: 0;
+          left: 28px;
+          bottom: 0;
+
+          width: 20px;
+          height: 18px;
+          background: url("../img/footer_ico/join_fb.svg") no-repeat;
+
+          margin: auto;
+        }
+
+        &:hover {
+          &::before {
+            opacity: .9;
+          }
+        }
+      }
+    }
+
+    .accept {
+      img {
+        height: 30px;
+
+        &:nth-child(2) {
+          height: 42px;
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .follows {
+      a {
+        &:last-child {
+          margin-left: 6px;
+        }
+      }
+
+      img {
+        width: 32px;
+        background: $white-color;
+
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .bottom {
+    background: $dark-violet-color;
+
+    font-size: 12px;
+
+    padding: 40px 0;
+
+    p {
+      margin: 0;
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+      }
+    }
+
+    ul {
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        margin-top: 20px;
+      }
+
+      li {
+        margin-left: 12px;
+
+        @media only screen and (max-width: 680px), (orientation: portrait) {
+          margin-left: 0;
+        }
+
+        a {
+          border-bottom: 1px solid lighten($dark-violet-color, 10%);
+
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
+
+  a#bbblink img {
+    height: 42px !important;
+  }
+
+  a#bbblink.ruvtbas, a#bbblink.ruvtbus {
+    width: 23px !important;
+    height: 37px !important;
+    margin-left: 10px;
+  }
+
+  a#bbblink.sevtbas:hover img, a#bbblink.rbvtbas:hover img, a#bbblink.ruvtbas:hover img, a#bbblink.sevtbus:hover img, a#bbblink.rbvtbus:hover img, a#bbblink.ruvtbus:hover img {
+    margin-left: -23px !important;
+  }
+}

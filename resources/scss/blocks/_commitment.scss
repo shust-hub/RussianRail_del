@@ -1,0 +1,69 @@
+#commitment {
+  @include background-overlay-image(background_commitment, 596px);
+
+  .commitment {
+    &__left,
+    &__right {
+      width: 50%;
+    }
+
+    &__left {
+      @include check($accent-color);
+      @extend %border-box;
+
+      background: $white-color;
+      color: $black-color;
+
+      padding: 40px 30px 55px;
+
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        width: 55%;
+      }
+
+      @media only screen and (max-width: 800px), (orientation: portrait) {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        padding: 30px 15px 35px;
+      }
+
+      h2 {
+        padding-bottom: 15px;
+      }
+    }
+
+    &__right {
+      @extend %border-box;
+
+      padding-top: 50px;
+      padding-left: 50px;
+
+      @media only screen and (max-width: 1200px), (orientation: portrait) {
+        width: 45%;
+        padding-left: 30px;
+      }
+
+      @media only screen and (max-width: 800px), (orientation: portrait) {
+        width: 100%;
+
+        padding-top: 30px;
+        padding-left: 0;
+      }
+
+      h2 {
+        font-size: 36px;
+        line-height: 38px;
+
+        @media only screen and (max-width: 520px), (orientation: portrait) {
+          font-size: 32px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

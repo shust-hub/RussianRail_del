@@ -1,0 +1,114 @@
+#header {
+  @include image(head, 524px);
+  @include overlay-head();
+
+  &.inner {
+    background-image: url("../img/head_inner.jpg");
+
+    padding-top: 20px;
+
+    .left {
+      @include flexbox(space-between, stretch,space-between, column);
+
+      height: 250px;
+
+      padding-bottom: 20px;
+
+      @media only screen and (max-width: 800px), (orientation: portrait) {
+        align-content: center;
+        height: 145px;
+      }
+
+      P {
+        color: $light-gray-color;
+
+        a {
+          color: $white-color;
+
+          &:hover {
+            color: darken($white-color, 20%);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px), (orientation: portrait) {
+    padding-bottom: 60px;
+  }
+
+  .content {
+    align-items: flex-end;
+
+    h1, h4 {
+      text-shadow: 1px 1px 3px rgba($black-color, .3);
+    }
+  }
+
+  .left {
+    width: 65%;
+
+    padding-bottom: 60px;
+
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      width: 55%;
+
+      br {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 800px), (orientation: portrait) {
+      width: 100%;
+
+      text-align: center;
+
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .right {
+    @include shadow(0 1px 2px rgba($black-color, .2));
+    @extend %border-box;
+
+    width: 35%;
+    background: $white-color;
+    text-align: left;
+    color: $black-color;
+
+    padding: 30px 15px 40px;
+
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      width: 40%;
+    }
+
+    @media only screen and (max-width: 800px), (orientation: portrait) {
+      width: 100%;
+      max-width: 410px;
+
+      padding: 20px 15px 30px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: $black-color;
+      font-weight: 400;
+
+      margin-bottom: 10px;
+    }
+
+    form {
+      .right__colums {
+        .half {
+          width: 48.5%;
+
+          &.flexbox {
+            justify-content: flex-start;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,254 @@
+*, *::after, *::before {
+  @extend %border-box;
+}
+
+.content {
+  @include content;
+}
+
+.bottomBlock {
+  @include background-png(background, top left);
+
+  padding-bottom: 200px;
+}
+
+.flexbox {
+  @include flexbox(space-between, stretch,space-between);
+}
+
+.vFlexbox {
+  @include flexbox(space-between, stretch,space-between, column);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.relative {
+  position: relative;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.vertical-align {
+  align-content: center;
+}
+
+.flex_end {
+  justify-content: flex-end;
+}
+
+.marginBottom15 {
+  margin-bottom: 15px;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
+#toTop {
+  position: fixed;
+  display: none;
+
+  bottom: 40px;
+  right: 30px;
+
+  width: 80px;
+  height: 70px;
+  background-color: rgba($accent-color, .1);
+
+  cursor: pointer;
+  z-index: 999;
+
+  @include transition();
+
+  @media (max-width: 680px) {
+    width: 60px;
+    height: 50px;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: url("../img/top.svg");
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 20px;
+
+    margin: auto;
+    opacity: .6;
+
+    @media (max-width: 680px) {
+      width: 30px;
+    }
+  }
+
+  &:hover {
+    @include animation(top);
+
+    background-color: rgba($accent-color, .6);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+form {
+  @include form();
+}
+
+button {
+  @include transition();
+
+  width: 100%;
+  max-width: 380px;
+  height: 50px;
+  background: $accent-color;
+
+  font-family: $deafult-font;
+  font-size: 18px;
+  font-weight: 700;
+  color: $white-color;
+  text-transform: uppercase;
+
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background: lighten($accent-color, 5%);
+    color: rgba($white-color, .9);
+  }
+
+  &:active,
+  &:focus {
+    background: darken($accent-color, 5%);
+  }
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.noMargin {
+  @extend %no-margin;
+}
+
+.marginTop15 {
+  margin-top: 15px;
+}
+
+.marginTop30 {
+  margin-top: 30px;
+}
+
+.marginTop45 {
+  margin-top: 45px;
+}
+
+.padding20 {
+  padding: 20px 0;
+}
+
+.marginCenter {
+  margin: 0 auto;
+}
+
+.shadow {
+  @include shadow(0 6px 0 darken($blue-color, 5%));
+
+  &:hover {
+    @include shadow(0 3px 0 darken($blue-color, 5%));
+    top: 3px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#content {
+  margin-top: -65px;
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+
+  @media only screen and (max-width: 560px), (orientation: portrait) {
+    text-align: center;
+  }
+
+  &::after {
+    @include transition();
+    @include shadow(0 1px 2px rgba($black-color, .3));
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: rgba($black-color, .8);
+    content: attr(data-tooltip);
+
+    width: 200px;
+
+    font-size: 14px;
+    font-weight: 300;
+    color: $white-color;
+    text-align: center;
+
+    padding: 6px 10px 8px;
+    margin-top: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1; /* Показываем его */
+      visibility: visible;
+    }
+  }
+}
+
+a {
+  .tooltip {
+    cursor: pointer;
+  }
+}

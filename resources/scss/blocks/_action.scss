@@ -1,0 +1,28 @@
+#action {
+  @include background-overlay-image(background_actioncall, 328px, 45px 0);
+
+  .content {
+    text-align: center;
+
+    br {
+      @media only screen and (max-width: 520px), (orientation: portrait) {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    h3 {
+      span {
+        color: $light-blue-color;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+    }
+  }
+}

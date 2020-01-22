@@ -1,0 +1,27 @@
+@import "variables";
+
+@import "global/fonts";
+
+@import "normalize";
+@import "mixins";
+@import "rule";
+
+@import "global/typography";
+
+@import "blocks/header";
+@import "blocks/recommended";
+@import "blocks/choose";
+@import "blocks/footer";
+@import "blocks/nav";
+@import "blocks/commitment";
+@import "blocks/destinations";
+@import "blocks/action";
+@import "blocks/testimonials";
+@import "blocks/kids";
+@import "blocks/news";
+@import "blocks/trains";
+@import "blocks/about";
+@import "blocks/visa";
+@import "blocks/_articlePage";
+
+@import "media";

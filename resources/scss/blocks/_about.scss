@@ -1,0 +1,118 @@
+#about {
+  .who-we-are {
+    @include background-overlay-image(background_about, 370px, 45px 0 60px);
+
+    ul {
+      @include check($light-blue-color);
+
+      margin-top: 5px;
+
+      -webkit-column-count: 2;
+         -moz-column-count: 2;
+              column-count: 2;
+
+      @media only screen and (max-width: 560px), (orientation: portrait) {
+        -webkit-column-count: 1;
+           -moz-column-count: 1;
+                column-count: 1;
+      }
+
+      a {
+        color: $light-blue-color;
+
+        &:hover {
+          color: lighten($light-blue-color, 10%);
+        }
+      }
+    }
+  }
+
+  .description {
+
+    &__left {
+      width: 48%;
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+
+        margin-bottom: 35px;
+      }
+    }
+
+    &__right {
+      width: 48%;
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+      }
+
+      img {
+        @extend %border-box;
+
+        width: 110px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+#brands {
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  img {
+    padding-right: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+#culture-for-kids {
+  .description {
+    &__left {
+      width: 48%;
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+
+        margin-bottom: 35px;
+      }
+
+      img {
+        @extend %border-box;
+
+        width: 72px;
+        padding-right: 20px;
+      }
+    }
+
+    &__right {
+      width: 48%;
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+      }
+
+      img {
+        @extend %border-box;
+
+        width: 100px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .gallery {
+    @include arrows();
+
+    img {
+      @include transition();
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+  }
+}
+

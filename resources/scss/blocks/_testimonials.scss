@@ -1,0 +1,50 @@
+#testimonials {
+  padding: 45px 0 50px;
+  background: $lighter-gray-color;
+
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  .owl-dots {
+    text-align: center;
+
+    margin-top: 15px;
+
+    .owl-dot {
+      @include border-radius(50%);
+      @include transition();
+
+      width: 16px;
+      height: 16px;
+
+      background: darken($lighter-gray-color, 5%);
+
+      margin: 0 4px;
+
+      &.active,
+      &:hover {
+        background: darken($lighter-gray-color, 18%);
+      }
+    }
+  }
+
+  .testimonials {
+    position: relative;
+
+    @include arrows();
+
+    &__block {
+      @include testimonials();
+
+      @media only screen and (max-width: 1320px), (orientation: portrait) {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        width: 100%;
+      }
+    }
+  }
+}

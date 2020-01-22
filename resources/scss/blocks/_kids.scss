@@ -1,0 +1,112 @@
+#kids {
+  padding: 50px 0 55px;
+
+  .kids {
+    img {
+      @media only screen and (max-width: 800px), (orientation: portrait) {
+        width: 100px;
+      }
+    }
+
+    &__content {
+      @extend %border-box;
+
+      padding-left: 50px;
+
+      h2 {
+        display: none;
+      }
+
+      p {
+        font-family: $kids-font;
+        font-size: 32px;
+        line-height: 1.3;
+        font-style: italic;
+
+        @extend %no-margin;
+
+        @media only screen and (max-width: 800px), (orientation: portrait) {
+          font-size: 26px;
+        }
+
+        @media only screen and (max-width: 520px), (orientation: portrait) {
+          font-size: 21px;
+
+          br {
+            display: none;
+          }
+        }
+
+      }
+
+      button {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  &.inner {
+    background: $lighter-gray-color;
+    padding: 30px 0 55px;
+
+    .kids {
+      @include white-border();
+
+      padding: 30px;
+
+      img {
+        width: 60px;
+      }
+
+      br {
+        display: none;
+      }
+
+      p {
+        font-size: 24px;         
+      @media (min-width: 300px) and (max-width: 520px) { 
+          font-size: 18px;
+          br {
+            display: none;
+          } 
+       }
+      }
+
+      button {
+        position: relative;
+
+        background: none;
+        width: auto;
+        height: auto;
+
+        color: $accent-color;
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: inherit;
+
+        margin-top: 5px;
+        padding: 0;
+
+        &:hover {
+          color: lighten($accent-color, 17%);
+        }
+
+        &::after {
+          @extend %position-absolute;
+
+          content: '\203A';
+
+          left: auto;
+          right: -16px;
+
+          font-size: 32px;
+          line-height: 19px;
+        }
+      }
+
+      &__content {
+        padding-left: 35px;
+      }
+    }
+  }
+}

@@ -1,0 +1,275 @@
+#visa {
+    .pricing{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 30px 0;
+        
+        .pricing-box{
+            height: 380px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: $lighter-gray-color;
+            align-items: center;
+            flex-grow: 1;
+        
+              @media (min-width: 768px) and (max-width: 1024px) {
+                
+                width: 50%;
+                margin-bottom: 20px;
+                
+              }
+              
+              @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                
+                width: 50%;
+                margin-bottom: 20px;
+              }
+              
+              @media (min-width: 481px) and (max-width: 767px) {
+                
+                width: 50%;
+                margin-bottom: 20px;
+                
+              }
+              
+              
+              @media (min-width: 320px) and (max-width: 480px) {
+                
+                width: 70%;
+                margin-bottom: 20px;
+                
+              }
+        }
+        .pricing-title{
+                font-size: 18pt;
+                line-height: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 30px;
+        }
+        .pricing-price{
+            font-family: $header-font;
+            font-size: 48pt;
+            background-color: #e6e6e6;
+            width: 100%;
+            span{
+                display: inline-block;
+                vertical-align: top;
+                margin: 7px 3px 0 0;
+                font-size: 28px;
+                font-weight: normal;
+            }
+            .price-tenure{
+                vertical-align: baseline;
+                font-size: 20px;
+                font-weight: normal;
+                color: #999;
+                margin: 0 0 0 3px;
+            }
+        }
+        .pricing-features {
+            padding: 20px 0 30px;
+        }
+        button{
+            background-color: #6a6a6a;
+            width: 93%;
+            &:hover{
+                background-color: $accent-color;
+            }
+        }
+
+        .bestPrice{
+            background-color: white;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+            z-index: 54;  
+            .pricing-title{
+                padding: 0;
+            }
+            P{
+                margin-bottom: 30px;
+            }
+            @media (min-width: 1281px) {
+  
+                height: 410px; 
+                margin-top: -15px;
+            }
+            
+            
+            @media (min-width: 1025px) and (max-width: 1280px) {
+                height: 410px;
+                margin-top: -15px;
+            }
+            button{
+                background-color: $accent-color;
+
+            }
+            .pricing-price {
+                background-color: $blue-color;
+                color: white;
+            }
+            .price-tenure{
+                color: white;
+            }
+        }
+    }
+
+    .pricing-warning{
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(209, 217, 243);
+        background-color: rgb(223, 231, 255);
+        padding: 20px 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  // Layout
+  .row {
+    display:flex;
+    .col {
+      flex:1;
+      &:last-child {
+        margin-left: 1em;
+      }
+    }
+  }
+  /* Accordion styles */
+  .tabs {
+    overflow: hidden;
+  }
+
+  .tab {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      background: $lighter-gray-color;
+      font-weight: bold;
+      cursor: pointer;
+      /* Icon */
+      &:hover {
+        background-color: $lighter-gray-color;
+        color: $accent-color;
+      }
+      &::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all .35s;
+      }
+    }
+    &-content {
+      max-height: 0;
+      padding: 0 1em;
+      background-color: $lighter-gray-color;
+      transition: all .35s;
+    }
+    &-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      background-color: $lighter-gray-color;
+      color: $accent-color;
+      cursor: pointer;
+      &:hover {
+        background-color: $lighter-gray-color;
+        color: $accent-color;
+      }
+    }
+  }
+  
+  // :checked
+  input:checked {
+    + .tab-label {
+    background-color: $lighter-gray-color;
+    color: $accent-color;
+    border-bottom: 1px solid #e6e6e6;;
+
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+    ~ .tab-content {
+      max-height: 200vh;
+      padding: 1em;
+    }
+  }
+
+  .important{
+      display: flex;
+      p{
+          padding: 0 20px;
+      }
+      img {
+          width: 54px;
+          height: 54px;
+          margin: .5em 0;
+      }
+  }
+
+
+  #ApplyingVisa {
+      .applying{
+          display: flex;
+          width: 102%;
+          justify-content: space-between;
+          margin-left: -10px;
+          margin-bottom: 30px;
+          margin-top: 30px;
+          @media (min-width: 320px) and (max-width: 767px) {
+            flex-wrap: wrap;  
+          }
+          
+          .applyingBox{
+            height: 250px; 
+            background-color: $lighter-gray-color; 
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 20px;
+            margin: 0 10px;
+
+            @media (min-width: 481px) and (max-width: 767px) {
+                width: 70%;
+                margin-bottom: 20px;
+            }
+              
+            @media (min-width: 320px) and (max-width: 480px) { 
+                width: 70%;
+                margin-bottom: 20px; 
+             }
+
+            .applyBoxText{
+                width: 95%;
+                background-color: white;
+                padding: 20px 30px;
+            }
+
+          }
+      }
+  }
+
+  #applyingBox1{
+    background-image: url('/img/visa/onlineVisaApplicationForm.png');
+  }
+  #applyingBox2{
+    background-image: url('/img/visa/consularFeesForUScitizen.png');
+  }
