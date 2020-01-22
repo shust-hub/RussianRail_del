@@ -206,6 +206,9 @@ section {
 ol {
   margin-left: 20px; }
 
+.owl-carousel .owl-item .owl-lazy.loaded {
+  opacity: 1; }
+
 .content {
   max-width: 1180px;
   width: calc(100% - 35px);
