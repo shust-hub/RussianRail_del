@@ -92,7 +92,7 @@ header .content .nav-trigger, header .content .nav-trigger span, header .content
   left: 0;
   right: 0; }
 
-*, ::after, ::before, form input, #header, #header .right, #recommended .recommended__block a#bbblink div, #choose .content .choose__block, .navigation, .navigation__list, .navigation__list a, #commitment, #commitment .commitment__left, #commitment .commitment__right, #destinations .destinations__block .description, #action, #testimonials .testimonials__block, #testimonials .testimonials__block .main .quote p, #kids .kids__content, #news .news, #news .news__block .description, .trains__content .main-info .train__description .text, .trains__content .main-info .train__schedule .stroke .number, .trains__content .main-info .train__schedule .stroke .time, .trains__content .main-info .train__schedule .stroke .from, .trains__content .main-info .train__schedule .stroke .to, #about .who-we-are, #about .description__right img, #culture-for-kids .description__left img, #culture-for-kids .description__right img {
+*, ::after, ::before, form input, form textarea, #header, #header .right, #recommended .recommended__block a#bbblink div, #choose .content .choose__block, .navigation, .navigation__list, .navigation__list a, #commitment, #commitment .commitment__left, #commitment .commitment__right, #destinations .destinations__block .description, #action, #testimonials .testimonials__block, #testimonials .testimonials__block .main .quote p, #kids .kids__content, #news .news, #news .news__block .description, .trains__content .main-info .train__description .text, .trains__content .main-info .train__schedule .stroke .number, .trains__content .main-info .train__schedule .stroke .time, .trains__content .main-info .train__schedule .stroke .from, .trains__content .main-info .train__schedule .stroke .to, #about .who-we-are, #about .description__right img, #culture-for-kids .description__left img, #culture-for-kids .description__right img {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -391,7 +391,7 @@ form .way {
     color: #ad1e2f;
     font-size: 30px;
     font-family: "Segoe UI Emoji"; }
-form input {
+form input, form textarea {
   color: #000;
   font-size: 14px;
   font-weight: 300 !important;
@@ -403,50 +403,50 @@ form input {
   border: none;
   padding: 5px 15px;
   margin-bottom: 10px; }
-  form input[type="radio"] {
+  form input[type="radio"], form textarea[type="radio"] {
     display: none; }
-  form input::-webkit-input-placeholder {
+  form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input::-ms-input-placeholder {
+  form input::-ms-input-placeholder, form textarea::-ms-input-placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input:-ms-input-placeholder {
+  form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input::placeholder {
+  form input::placeholder, form textarea::placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input:-ms-input-placeholder {
+  form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input:-moz-placeholder {
+  form input:-moz-placeholder, form textarea:-moz-placeholder {
     color: #000;
     font-size: 14px;
     font-weight: 300 !important; }
-  form input:disabled {
+  form input:disabled, form textarea:disabled {
     pointer-events: none;
     opacity: .3; }
-  form input:active, form input:focus {
+  form input:active, form input:focus, form textarea:active, form textarea:focus {
     background: whitesmoke; }
-    form input:active::-webkit-input-placeholder, form input:focus::-webkit-input-placeholder {
+    form input:active::-webkit-input-placeholder, form input:focus::-webkit-input-placeholder, form textarea:active::-webkit-input-placeholder, form textarea:focus::-webkit-input-placeholder {
       color: transparent; }
-    form input:active::-ms-input-placeholder, form input:focus::-ms-input-placeholder {
+    form input:active::-ms-input-placeholder, form input:focus::-ms-input-placeholder, form textarea:active::-ms-input-placeholder, form textarea:focus::-ms-input-placeholder {
       color: transparent; }
-    form input:active:-ms-input-placeholder, form input:focus:-ms-input-placeholder {
+    form input:active:-ms-input-placeholder, form input:focus:-ms-input-placeholder, form textarea:active:-ms-input-placeholder, form textarea:focus:-ms-input-placeholder {
       color: transparent; }
-    form input:active::placeholder, form input:focus::placeholder {
+    form input:active::placeholder, form input:focus::placeholder, form textarea:active::placeholder, form textarea:focus::placeholder {
       color: transparent; }
-    form input:active:-ms-input-placeholder, form input:focus:-ms-input-placeholder {
+    form input:active:-ms-input-placeholder, form input:focus:-ms-input-placeholder, form textarea:active:-ms-input-placeholder, form textarea:focus:-ms-input-placeholder {
       color: transparent; }
-    form input:active:-moz-placeholder, form input:focus:-moz-placeholder {
+    form input:active:-moz-placeholder, form input:focus:-moz-placeholder, form textarea:active:-moz-placeholder, form textarea:focus:-moz-placeholder {
       color: transparent; }
-  form input#one-way:checked + label::before, form input#return:checked + label::before {
+  form input#one-way:checked + label::before, form input#return:checked + label::before, form textarea#one-way:checked + label::before, form textarea#return:checked + label::before {
     content: "\2022";
     font-family: "Segoe UI Emoji";
     color: #ad1e2f;
@@ -2685,5 +2685,37 @@ input:checked ~ .tab-content {
         .articlesPage #news .news__block .description {
           padding: 18px 25px;
           min-height: 94px; } }
+
+#contacts .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+@media (min-width: 1281px) {
+  #contacts .description__left, #contacts .description__right {
+    width: 49%; } }
+@media (min-width: 320px) and (max-width: 767px) {
+  #contacts .description__left, #contacts .description__right {
+    width: 100%; } }
+@media (min-width: 320px) and (max-width: 767px) {
+  #contacts .description__right {
+    text-align: center;
+    margin-top: 30px; } }
+#contacts textarea {
+  height: 200px; }
+#contacts input, #contacts textarea {
+  margin-top: 10px; }
+#contacts .button {
+  max-width: 100%; }
+#contacts .contacts__card p {
+  font-size: 20px;
+  line-height: 26px; }
 
 /*# sourceMappingURL=style.css.map */

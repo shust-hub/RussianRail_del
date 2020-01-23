@@ -1,0 +1,48 @@
+#contacts{
+
+    .description{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    
+    }
+
+    .description__left, .description__right {
+        @media (min-width: 1281px) {
+            width: 49%;
+          }
+
+        @media (min-width: 320px) and (max-width: 767px) {
+            
+            width: 100%;
+        }
+          
+    }
+
+    .description__right{
+        
+        @media (min-width: 320px) and (max-width: 767px) {
+            
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+
+    textarea {
+        height: 200px;
+    }
+    input, textarea {
+        margin-top: 10px;
+    }
+    .button{
+        max-width: 100%;
+    }
+
+    .contacts__card p{
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+
+}
