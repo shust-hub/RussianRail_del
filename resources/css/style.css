@@ -211,15 +211,23 @@ ol {
 
 ::-moz-selection {
   background: #ad1e2f;
-  /* Safari */ }
+  /* Safari */
+  color: white; }
 
 ::selection {
   background: #ad1e2f;
-  /* Safari */ }
+  /* Safari */
+  color: white; }
 
 ::-moz-selection {
   background: #ad1e2f;
-  /* Firefox */ }
+  /* Firefox */
+  color: white; }
+
+mark {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0 5px; }
 
 .content {
   max-width: 1180px;
@@ -1434,7 +1442,7 @@ main {
         #commitment .commitment__right h2 {
           font-size: 32px; } }
     #commitment .commitment__right p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 24px; }
 
 #destinations {
@@ -1520,11 +1528,15 @@ main {
       #action .content br {
         display: none; } }
     #action .content p {
-      font-size: 16px;
+      font-size: 19px;
       margin-top: 0;
-      color: #171717; }
+      color: #171717;
+      line-height: 26px;
+      font-weight: bold; }
     #action .content h3 {
-      color: #171717; }
+      padding-top: 5px;
+      color: #4169e1;
+      line-height: 33px; }
       #action .content h3 span {
         color: #97acee; }
     #action .content button {
