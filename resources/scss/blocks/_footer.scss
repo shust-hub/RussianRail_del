@@ -1,5 +1,6 @@
 footer {
-  color: lighten($light-violet-color, 15%);
+  // color: lighten($light-violet-color, 15%);
+  color: $dark-white-color;
 
   p {
     margin: 0;
@@ -15,15 +16,17 @@ footer {
   }
 
   a {
-    color: lighten($light-violet-color, 30%);
+    // color: lighten($light-violet-color, 30%);
+    color: $dark-white-color;
 
     &:hover {
-      color: lighten($light-violet-color, 45%);
+      // color: lighten($light-violet-color, 45%);
     }
   }
 
   .top {
-    background: $darken-violet-color;
+    // background: $darken-violet-color;
+    background: $blue-color;
     padding: 35px 0;
 
     .no-wrap {
@@ -178,7 +181,8 @@ footer {
   }
 
   .bottom {
-    background: $dark-violet-color;
+    // background: $dark-violet-color;
+    background: darken($blue-color, 10%);
 
     font-size: 12px;
 

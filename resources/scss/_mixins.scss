@@ -722,6 +722,19 @@
   }
 }
 
+@mixin background-size-image($image, $height, $padding-800:60px 0) {
+  @include image($image, $height);
+  @media only screen and (max-width: 1200px), (orientation: portrait) {
+    min-height: auto;
+
+    padding: 60px 0;
+  }
+
+  @media only screen and (max-width: 800px), (orientation: portrait) {
+    padding: $padding-800;
+  }
+}
+
 
 // Анимация
 
@@ -848,5 +861,12 @@ ol{
 .owl-carousel .owl-item .owl-lazy.loaded{
   opacity: 1;
   }
+
+  ::selection {
+    background: $accent-color; /* Safari */
+    }
+    ::-moz-selection {
+    background: $accent-color; /* Firefox */
+    }
 
 

@@ -1,6 +1,10 @@
 #header {
   @include image(head, 524px);
-  @include overlay-head();
+  // @include overlay-head();
+  background-position: 0 80%;
+
+  // @include background-size-image(head, 524px);
+  // @include background-png(head, center);
 
   &.inner {
     background-image: url("../img/head_inner.jpg");

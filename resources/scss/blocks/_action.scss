@@ -1,5 +1,12 @@
 #action {
-  @include background-overlay-image(background_actioncall, 328px, 45px 0);
+ 
+  @include background-size-image(background_actioncall5, 328px, 45px 0);
+
+  // @include background-size-image(background_actioncall4, 328px, 45px 0);
+  // @include background-size-image(background_actioncall3, 328px, 45px 0);
+  background-position: 0% 60%;
+  // @include background-size-image(background_actioncall1, 328px, 45px 0);
+  // @include background-size-image(background_actioncall2, 328px, 45px 0);
 
   .content {
     text-align: center;
@@ -13,9 +20,15 @@
     p {
       font-size: 16px;
       margin-top: 0;
+      color: $dark-gray-color;
+      // background-color: rgba($color: #000000, $alpha: .5);
+      // padding: 15px;
     }
 
     h3 {
+      // background-color: rgba($color: #000000, $alpha: .5);
+      // padding: 15px;
+      color: $dark-gray-color;
       span {
         color: $light-blue-color;
       }
