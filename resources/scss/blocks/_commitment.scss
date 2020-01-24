@@ -48,7 +48,7 @@
   .commitment {
     &__left,
     &__right {
-      width: 50%;
+      width: 49%;
     }
 
     &__left {
@@ -61,7 +61,7 @@
       padding: 40px 30px 55px;
 
       @media only screen and (max-width: 980px), (orientation: portrait) {
-        width: 55%;
+        width: 49%;
       }
 
       @media only screen and (max-width: 800px), (orientation: portrait) {
@@ -72,33 +72,49 @@
         padding: 30px 15px 35px;
       }
 
-      h2 {
-
-      }
     }
 
     &__right {
-      @extend %border-box;
+      // @extend %border-box;
+      background: $white-color;
+      color: $black-color;
+      // background-color: rgba(173, 30, 47, .9);
 
-      padding-top: 50px;
-      padding-left: 50px;
-      margin-top: 15px;
+      padding: 40px 30px 55px;
 
-      @media only screen and (max-width: 1200px), (orientation: portrait) {
-        width: 45%;
-        padding-left: 30px;
+      // padding-top: 50px;
+      // padding-left: 50px;
+      // margin-top: 15px;
+
+      // @media only screen and (max-width: 1200px), (orientation: portrait) {
+      //   width: 45%;
+      //   padding-left: 30px;
+      // }
+
+      // @media only screen and (max-width: 800px), (orientation: portrait) {
+      //   width: 100%;
+
+      //   padding-top: 30px;
+      //   padding-left: 0;
+      // }
+
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        width: 49%;
       }
 
       @media only screen and (max-width: 800px), (orientation: portrait) {
         width: 100%;
-
-        padding-top: 30px;
-        padding-left: 0;
       }
+
+      @media only screen and (max-width: 680px), (orientation: portrait) {
+        padding: 30px 15px 35px;
+      }
+
 
       h2 {
         font-size: 36px;
         line-height: 38px;
+        // text-shadow: 0px 0px 1px black, 0 0 5px black;
 
         @media only screen and (max-width: 520px), (orientation: portrait) {
           font-size: 32px;
@@ -107,8 +123,9 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: 14px;
         line-height: 24px;
+        // text-shadow:  0px 0px 1px black, 0 0 5px black;
       }
     }
   }

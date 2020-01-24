@@ -735,6 +735,20 @@
   }
 }
 
+@mixin background-size-image-bright($image, $height, $padding-800:60px 0) {
+  @include image($image, $height);
+  filter: brightness(1.2);
+  @media only screen and (max-width: 1200px), (orientation: portrait) {
+    min-height: auto;
+
+    padding: 60px 0;
+  }
+
+  @media only screen and (max-width: 800px), (orientation: portrait) {
+    padding: $padding-800;
+  }
+}
+
 
 // Анимация
 

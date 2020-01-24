@@ -92,7 +92,7 @@ header .content .nav-trigger, header .content .nav-trigger span, header .content
   left: 0;
   right: 0; }
 
-*, ::after, ::before, form input, form textarea, #header, #header .right, #recommended .recommended__block a#bbblink div, #choose .content .choose__block, .navigation, .navigation__list, .navigation__list a, #commitment, #commitment .commitment__left, #commitment .commitment__right, #destinations .destinations__block .description, #action, #testimonials .testimonials__block, #testimonials .testimonials__block .main .quote p, #kids .kids__content, #news .news, #news .news__block .description, .trains__content .main-info .train__description .text, .trains__content .main-info .train__schedule .stroke .number, .trains__content .main-info .train__schedule .stroke .time, .trains__content .main-info .train__schedule .stroke .from, .trains__content .main-info .train__schedule .stroke .to, #about .who-we-are, #about .description__right img, #culture-for-kids .description__left img, #culture-for-kids .description__right img {
+*, ::after, ::before, form input, form textarea, #header, #header .right, #recommended .recommended__block a#bbblink div, #choose .content .choose__block, .navigation, .navigation__list, .navigation__list a, #commitment, #commitment .commitment__left, #destinations .destinations__block .description, #action, #testimonials .testimonials__block, #testimonials .testimonials__block .main .quote p, #kids .kids__content, #news .news, #news .news__block .description, .trains__content .main-info .train__description .text, .trains__content .main-info .train__schedule .stroke .number, .trains__content .main-info .train__schedule .stroke .time, .trains__content .main-info .train__schedule .stroke .from, .trains__content .main-info .train__schedule .stroke .to, #about .who-we-are, #about .description__right img, #culture-for-kids .description__left img, #culture-for-kids .description__right img {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -1390,7 +1390,7 @@ main {
     #commitment {
       padding: 60px 0; } }
   #commitment .commitment__left, #commitment .commitment__right {
-    width: 50%; }
+    width: 49%; }
   #commitment .commitment__left {
     background: #fff;
     color: #000;
@@ -1412,7 +1412,7 @@ main {
         color: #ad1e2f; }
     @media only screen and (max-width: 980px), (orientation: portrait) {
       #commitment .commitment__left {
-        width: 55%; } }
+        width: 49%; } }
     @media only screen and (max-width: 800px), (orientation: portrait) {
       #commitment .commitment__left {
         width: 100%; } }
@@ -1420,18 +1420,18 @@ main {
       #commitment .commitment__left {
         padding: 30px 15px 35px; } }
   #commitment .commitment__right {
-    padding-top: 50px;
-    padding-left: 50px;
-    margin-top: 15px; }
-    @media only screen and (max-width: 1200px), (orientation: portrait) {
+    background: #fff;
+    color: #000;
+    padding: 40px 30px 55px; }
+    @media only screen and (max-width: 980px), (orientation: portrait) {
       #commitment .commitment__right {
-        width: 45%;
-        padding-left: 30px; } }
+        width: 49%; } }
     @media only screen and (max-width: 800px), (orientation: portrait) {
       #commitment .commitment__right {
-        width: 100%;
-        padding-top: 30px;
-        padding-left: 0; } }
+        width: 100%; } }
+    @media only screen and (max-width: 680px), (orientation: portrait) {
+      #commitment .commitment__right {
+        padding: 30px 15px 35px; } }
     #commitment .commitment__right h2 {
       font-size: 36px;
       line-height: 38px; }
@@ -1439,7 +1439,7 @@ main {
         #commitment .commitment__right h2 {
           font-size: 32px; } }
     #commitment .commitment__right p {
-      font-size: 18px;
+      font-size: 14px;
       line-height: 24px; }
 
 #destinations {
@@ -1500,7 +1500,7 @@ main {
       width: 100%; }
 
 #action {
-  background-image: url(../img/background_actioncall5.jpg);
+  background-image: url(../img/background_actioncall6.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1510,8 +1510,7 @@ main {
   min-height: 328px;
   height: auto;
   color: #fff;
-  margin: 0 auto;
-  background-position: 0% 60%; }
+  margin: 0 auto; }
   @media only screen and (max-width: 1200px), (orientation: portrait) {
     #action {
       min-height: auto;
@@ -1527,12 +1526,12 @@ main {
     #action .content p {
       font-size: 19px;
       margin-top: 0;
-      color: #171717;
+      color: #f0f0f0;
       line-height: 26px;
       font-weight: bold; }
     #action .content h3 {
       padding-top: 5px;
-      color: #4169e1;
+      color: #f0f0f0;
       line-height: 33px; }
       #action .content h3 span {
         color: #97acee; }

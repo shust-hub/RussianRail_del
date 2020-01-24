@@ -1,12 +1,17 @@
 #action {
  
-  @include background-size-image(background_actioncall5, 328px, 45px 0);
+  @include background-size-image(background_actioncall6, 328px, 45px 0);
+  // @include background-size-image(background_actioncall5, 328px, 45px 0);
+  // background-position: 0% 34%!important;
 
   // @include background-size-image(background_actioncall4, 328px, 45px 0);
-  // @include background-size-image(background_actioncall3, 328px, 45px 0);
-  background-position: 0% 60%;
+  // @include background-size-image-bright(background_actioncall, 328px, 45px 0);
+  // @include background-size-image-bright(background_actioncall3, 328px, 45px 0);
+
   // @include background-size-image(background_actioncall1, 328px, 45px 0);
   // @include background-size-image(background_actioncall2, 328px, 45px 0);
+
+
 
   .content {
     text-align: center;
@@ -20,19 +25,23 @@
     p {
       font-size: 19px;
       margin-top: 0;
-      color: $dark-gray-color;
+      color: $lighter-gray-color;
       line-height: 26px;
       font-weight: bold;
       // background-color: rgba($color: #000000, $alpha: .5);
       // padding: 15px;
+      // text-shadow: 1px 1px 2px $gray-color, 0 0 1em $gray-color;
+      // text-shadow: 0 0 5px $gray-color;
     }
 
     h3 {
       // background-color: rgba($color: #000000, $alpha: .5);
       // padding: 15px;
       padding-top: 5px;
-      color: $blue-color;
+      color: $lighter-gray-color;
       line-height: 33px;
+      // text-shadow: 1px 1px 2px $gray-color, 0 0 1em $gray-color;
+      // text-shadow: 0 0 5px $gray-color;
       span {
         color: $light-blue-color;
       }
