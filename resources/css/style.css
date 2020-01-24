@@ -650,7 +650,7 @@ a:hover {
   margin: 0 auto;
   background-position: 0 80%; }
   #header.inner {
-    background-image: url("../img/head_inner.jpg");
+    background-image: url("../img/head.jpg");
     padding-top: 20px; }
     #header.inner .left {
       -js-display: flex;
@@ -2146,38 +2146,15 @@ main {
   min-height: 370px;
   height: auto;
   color: #fff;
-  margin: 0 auto; }
-  #about .who-we-are::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.3); }
-  #about .who-we-are::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    width: 100%;
-    min-height: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(62, 26, 46, 0.5);
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(62, 26, 46, 0.5)), to(rgba(32, 30, 70, 0.5)));
-    background: linear-gradient(to top, rgba(62, 26, 46, 0.5), rgba(32, 30, 70, 0.5)); }
+  margin: 0 auto;
+  color: black; }
   @media only screen and (max-width: 1200px), (orientation: portrait) {
     #about .who-we-are {
       min-height: auto;
       padding: 60px 0; } }
   @media only screen and (max-width: 800px), (orientation: portrait) {
     #about .who-we-are {
-      padding: 45px 0 60px; } }
+      padding: 45px 0; } }
   #about .who-we-are ul {
     margin-top: 5px;
     -webkit-column-count: 2;
@@ -2222,9 +2199,34 @@ main {
 
 #brands h2 {
   margin-bottom: 15px; }
-#brands img {
-  padding-right: 30px;
-  margin-bottom: 30px; }
+#brands .brands-box {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  #brands .brands-box .box-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (min-width: 375px) and (max-width: 767px) {
+      #brands .brands-box .box-item {
+        width: 50%;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 20px; } }
+    @media (min-width: 320px) and (max-width: 374px) {
+      #brands .brands-box .box-item {
+        width: 100%;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 20px; } }
 
 #culture-for-kids .description__left {
   width: 48%; }
@@ -2697,16 +2699,19 @@ input:checked ~ .tab-content {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-@media (min-width: 1281px) {
+@media (min-width: 768px) {
   #contacts .description__left, #contacts .description__right {
     width: 49%; } }
 @media (min-width: 320px) and (max-width: 767px) {
   #contacts .description__left, #contacts .description__right {
     width: 100%; } }
-@media (min-width: 320px) and (max-width: 767px) {
-  #contacts .description__right {
-    text-align: center;
-    margin-top: 30px; } }
+#contacts .description__right {
+  padding-left: 20px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    #contacts .description__right {
+      text-align: center;
+      margin-top: 30px;
+      padding-left: 0; } }
 #contacts textarea {
   height: 200px; }
 #contacts input, #contacts textarea {
@@ -2716,5 +2721,54 @@ input:checked ~ .tab-content {
 #contacts .contacts__card p {
   font-size: 20px;
   line-height: 26px; }
+
+#usefulInfo {
+  background: #f0f0f0;
+  padding-top: 50px; }
+
+@media only screen and (max-width: 980px), (orientation: portrait) {
+  .usefulInfo .content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+.usefulInfo .content {
+  padding: 100px 0 0; }
+.usefulInfo .usefulInfo__block {
+  position: relative;
+  cursor: pointer;
+  overflow-x: hidden;
+  width: 32%;
+  margin-bottom: 20px; }
+  @media (min-width: 1281px) {
+    .usefulInfo .usefulInfo__block {
+      width: 32%; } }
+  @media (min-width: 481px) and (max-width: 1280px) {
+    .usefulInfo .usefulInfo__block {
+      width: 49%; } }
+  @media (min-width: 320px) and (max-width: 480px) {
+    .usefulInfo .usefulInfo__block {
+      width: 100%; } }
+  .usefulInfo .usefulInfo__block img {
+    max-height: 445px; }
+  .usefulInfo .usefulInfo__block .usefulInfo__description {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 40px);
+    background: #fff;
+    text-align: center;
+    padding: 25px 25px 30px;
+    margin: auto; }
+    .usefulInfo .usefulInfo__block .usefulInfo__description p::after {
+      position: absolute;
+      content: '\2192';
+      font-family: "Segoe UI Emoji";
+      font-size: 16px;
+      color: #ad1e2f;
+      margin-left: 5px; }
+.usefulInfo .usefulInfo__block:hover .usefulInfo__description h3 {
+  -webkit-transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+  transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+  color: #ad1e2f; }
 
 /*# sourceMappingURL=style.css.map */

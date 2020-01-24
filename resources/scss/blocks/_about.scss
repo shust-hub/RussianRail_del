@@ -1,7 +1,8 @@
 #about {
   .who-we-are {
-    @include background-overlay-image(background_about, 370px, 45px 0 60px);
-
+    // @include background-image(background_about, 370px, 45px 0 60px);
+    @include background-size-image(background_about, 370px, 45px 0);
+    color: black;
     ul {
       @include check($light-blue-color);
 
@@ -61,9 +62,37 @@
     margin-bottom: 15px;
   }
 
-  img {
-    padding-right: 30px;
-    margin-bottom: 30px;
+  .brands-box {
+    align-items: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+
+    .box-item{
+      display: flex;
+      align-items: center;
+      @media (min-width: 768px) {
+  
+        //CSS
+        
+      }
+ 
+      @media (min-width: 375px) and (max-width: 767px) {
+        
+        width: 50%;
+        justify-content: center;
+        margin-bottom: 20px;
+        
+      }
+      
+
+      @media (min-width: 320px) and (max-width: 374px) {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+    }
+
   }
 }
 

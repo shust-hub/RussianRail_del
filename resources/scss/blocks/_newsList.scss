@@ -1,0 +1,81 @@
+#usefulInfo {
+  background:  $lighter-gray-color;
+  padding-top: 50px;
+}
+
+.usefulInfo{
+
+  @media only screen and (max-width: 980px), (orientation: portrait) {
+    .content {
+      flex-wrap: wrap;
+    }
+  }
+
+  .content {
+      padding: 100px 0 0;
+    }
+
+    .usefulInfo__block {
+        position: relative;
+        cursor: pointer;
+        overflow-x: hidden;
+        width: 32%;
+        margin-bottom: 20px;
+
+        @media (min-width: 1281px) {
+          width: 32%;
+        }
+        
+        
+        @media (min-width: 481px) and (max-width: 1280px) {
+           width: 49%;
+        }
+        
+        
+        @media (min-width: 320px) and (max-width: 480px) {
+          
+          width: 100%;  
+        }
+
+        img {
+            max-height: 445px;
+        }
+
+    .usefulInfo__description{
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        width: calc(100% - 40px);
+        background: #fff;
+        text-align: center;
+        padding: 25px 25px 30px;
+        margin: auto;
+        
+            p::after {
+                position: absolute;
+                content: '\2192';
+                font-family: "Segoe UI Emoji";
+                font-size: 16px;
+                color: #ad1e2f;
+                margin-left: 5px;
+            }
+        }  
+
+    }
+
+    .usefulInfo__block:hover{ 
+      
+      .usefulInfo__description h3 {
+         @include transition;
+          color: $accent-color;
+      }
+      // img{
+      //   @include transition;
+      //   filter: brightness(0.9);
+      // }
+
+      // box-shadow: 0 -10px 55px rgba(0,0,0,0.5);
+    }
+
+}

@@ -9,7 +9,8 @@
     }
 
     .description__left, .description__right {
-        @media (min-width: 1281px) {
+
+        @media (min-width: 768px) {
             width: 49%;
           }
 
@@ -21,13 +22,20 @@
     }
 
     .description__right{
+        padding-left: 20px;
         
         @media (min-width: 320px) and (max-width: 767px) {
             
             text-align: center;
             margin-top: 30px;
+            padding-left: 0;
+
         }
     }
+
+    // .contacts__card {
+    //     text-align: right;
+    // }
 
     textarea {
         height: 200px;
