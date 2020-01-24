@@ -1,9 +1,14 @@
-#usefulInfo {
+#newsList {
   background:  $lighter-gray-color;
-  padding-top: 50px;
+  background:  $lighter-gray-color;
+
+  .description {
+    background-color: white;
+    padding-bottom: 30px;
+  }
 }
 
-.usefulInfo{
+.newsList{
 
   @media only screen and (max-width: 980px), (orientation: portrait) {
     .content {
@@ -15,7 +20,7 @@
       padding: 100px 0 0;
     }
 
-    .usefulInfo__block {
+    .newsList__block {
         position: relative;
         cursor: pointer;
         overflow-x: hidden;
@@ -41,7 +46,7 @@
             max-height: 445px;
         }
 
-    .usefulInfo__description{
+    .newsList__description{
         position: absolute;
         bottom: 30px;
         left: 0;
@@ -64,9 +69,9 @@
 
     }
 
-    .usefulInfo__block:hover{ 
+    .newsList__block:hover{ 
       
-      .usefulInfo__description h3 {
+      .newsList__description h3 {
          @include transition;
           color: $accent-color;
       }

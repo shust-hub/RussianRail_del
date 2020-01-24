@@ -2723,33 +2723,136 @@ input:checked ~ .tab-content {
   line-height: 26px; }
 
 #usefulInfo {
-  background: #f0f0f0;
-  padding-top: 50px; }
+  background: #f0f0f0; }
+  #usefulInfo .description {
+    background-color: white;
+    padding-bottom: 30px; }
 
 @media only screen and (max-width: 980px), (orientation: portrait) {
-  .usefulInfo .content {
+  .usefulInfo__content {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
-.usefulInfo .content {
+.usefulInfo .usefulInfo__content {
+  background: #f0f0f0;
+  padding: 30px 0 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .usefulInfo .usefulInfo__content .main-info {
+    max-width: 73%;
+    width: 100%; }
+    @media only screen and (max-width: 1200px), (orientation: portrait) {
+      .usefulInfo .usefulInfo__content .main-info {
+        max-width: 68%; } }
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      .usefulInfo .usefulInfo__content .main-info {
+        max-width: 100%; } }
+  .usefulInfo .usefulInfo__content .usefulInfo-sidebar {
+    max-width: 26%;
+    width: 100%; }
+    @media only screen and (max-width: 1200px), (orientation: portrait) {
+      .usefulInfo .usefulInfo__content .usefulInfo-sidebar {
+        max-width: 30%; } }
+    @media only screen and (max-width: 980px), (orientation: portrait) {
+      .usefulInfo .usefulInfo__content .usefulInfo-sidebar {
+        max-width: 100%; } }
+    .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button {
+      height: 40px;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #fff;
+      margin-bottom: 5px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      cursor: pointer; }
+      .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button p {
+        line-height: 25px; }
+      .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button:hover {
+        -webkit-transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+        transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+        background-color: #4169e1; }
+        .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button:hover p {
+          color: #fff; }
+      @media only screen and (max-width: 1200px), (orientation: portrait) {
+        .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button {
+          max-width: 100%; } }
+      @media only screen and (max-width: 980px), (orientation: portrait) {
+        .usefulInfo .usefulInfo__content .usefulInfo-sidebar .sidebar-button {
+          max-width: 50%; } }
+    .usefulInfo .usefulInfo__content .usefulInfo-sidebar button {
+      max-width: 100%;
+      height: 50px;
+      margin-bottom: 30px; }
+  .usefulInfo .usefulInfo__content .usefulInfo__block {
+    position: relative;
+    cursor: pointer;
+    overflow-x: hidden;
+    width: 32%;
+    margin-bottom: 20px; }
+    @media (min-width: 1281px) {
+      .usefulInfo .usefulInfo__content .usefulInfo__block {
+        width: 49%; } }
+    @media (min-width: 481px) and (max-width: 1280px) {
+      .usefulInfo .usefulInfo__content .usefulInfo__block {
+        width: 49%; } }
+    @media (min-width: 320px) and (max-width: 480px) {
+      .usefulInfo .usefulInfo__content .usefulInfo__block {
+        width: 100%; } }
+    .usefulInfo .usefulInfo__content .usefulInfo__block img {
+      max-height: 445px; }
+    .usefulInfo .usefulInfo__content .usefulInfo__block .usefulInfo__description {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      width: calc(100% - 40px);
+      background: #fff;
+      text-align: center;
+      padding: 25px 25px 30px;
+      margin: auto; }
+      .usefulInfo .usefulInfo__content .usefulInfo__block .usefulInfo__description p::after {
+        position: absolute;
+        content: '\2192';
+        font-family: "Segoe UI Emoji";
+        font-size: 16px;
+        color: #ad1e2f;
+        margin-left: 5px; }
+  .usefulInfo .usefulInfo__content .usefulInfo__block:hover .usefulInfo__description h3 {
+    -webkit-transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+    transition: all 0.3s ease-out, all 0.3s ease-out, auto;
+    color: #ad1e2f; }
+
+#newsList {
+  background: #f0f0f0;
+  background: #f0f0f0; }
+  #newsList .description {
+    background-color: white;
+    padding-bottom: 30px; }
+
+@media only screen and (max-width: 980px), (orientation: portrait) {
+  .newsList .content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+.newsList .content {
   padding: 100px 0 0; }
-.usefulInfo .usefulInfo__block {
+.newsList .newsList__block {
   position: relative;
   cursor: pointer;
   overflow-x: hidden;
   width: 32%;
   margin-bottom: 20px; }
   @media (min-width: 1281px) {
-    .usefulInfo .usefulInfo__block {
+    .newsList .newsList__block {
       width: 32%; } }
   @media (min-width: 481px) and (max-width: 1280px) {
-    .usefulInfo .usefulInfo__block {
+    .newsList .newsList__block {
       width: 49%; } }
   @media (min-width: 320px) and (max-width: 480px) {
-    .usefulInfo .usefulInfo__block {
+    .newsList .newsList__block {
       width: 100%; } }
-  .usefulInfo .usefulInfo__block img {
+  .newsList .newsList__block img {
     max-height: 445px; }
-  .usefulInfo .usefulInfo__block .usefulInfo__description {
+  .newsList .newsList__block .newsList__description {
     position: absolute;
     bottom: 30px;
     left: 0;
@@ -2759,14 +2862,14 @@ input:checked ~ .tab-content {
     text-align: center;
     padding: 25px 25px 30px;
     margin: auto; }
-    .usefulInfo .usefulInfo__block .usefulInfo__description p::after {
+    .newsList .newsList__block .newsList__description p::after {
       position: absolute;
       content: '\2192';
       font-family: "Segoe UI Emoji";
       font-size: 16px;
       color: #ad1e2f;
       margin-left: 5px; }
-.usefulInfo .usefulInfo__block:hover .usefulInfo__description h3 {
+.newsList .newsList__block:hover .newsList__description h3 {
   -webkit-transition: all 0.3s ease-out, all 0.3s ease-out, auto;
   transition: all 0.3s ease-out, all 0.3s ease-out, auto;
   color: #ad1e2f; }
